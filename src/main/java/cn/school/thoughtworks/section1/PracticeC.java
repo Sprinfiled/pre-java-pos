@@ -6,12 +6,12 @@ import java.util.Map;
 
 public class PracticeC {
     List<String> collectSameElements(List<String> collection1, Map<String,List<String>> collection2) {
-        //å®ç°ç»ƒä¹ è¦æ±‚ï¼Œå¹¶æ”¹å†™è¯¥è¡Œä»£ç ã€‚
-        //å®šä¹‰å­—ç¬¦ä¸²åˆ—è¡¨
+        //ÊµÏÖÁ·Ï°ÒªÇó£¬²¢¸ÄĞ´¸ÃĞĞ´úÂë
+        //¶¨Òå×Ö·û´®ÁĞ±í
         List<String> result= new ArrayList<>();
-        //å¾ªç¯ç­›valueè£…è¿›å­—ç¬¦ä¸²åˆ—è¡¨result
+        //Ñ­»·É¸value×°½ø×Ö·û´®ÁĞ±íresult
         for (String a:collection1){
-            //collecttion2.valueæœ‰å€¼ä¸”ç­‰äºcollectains.açš„
+            //collecttion2.valueÓĞÖµÇÒµÈÓÚcollectains.aµÄ
             if (collection2.get("value").contains(a)&&collection2.containsKey("value")){
                 result.add(a);
             }

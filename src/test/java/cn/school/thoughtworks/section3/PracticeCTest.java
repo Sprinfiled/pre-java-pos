@@ -20,7 +20,7 @@ public class PracticeCTest {
 
     @Test
     public void create_update_collection_should_return_a_new_map_with_element_as_key_and_count_as_value() throws Exception {
-        //ç»Ÿè®¡å‡ºcollection1ä¸­ç›¸åŒçš„å…ƒç´ çš„ä¸ªæ•°ï¼Œå½¢æˆcollection3ï¼Œcollection3æ˜¯ä¸€ä¸ªmapå…¶ä¸­å…ƒç´ keyæ˜¯collection1ä¸­çš„å…ƒç´ valueæ˜¯è¯¥å…ƒç´ åœ¨collection1ä¸­å‡ºç°æ¬¡æ•°ï¼Œç„¶åé€‰å‡ºcollection3è·Ÿcollection2ä¸­valueå±æ€§å¯¹åº”çš„listä¸­çš„å…ƒç´ ç›¸åŒçš„å…ƒç´ ,æŠŠä»–ä»¬çš„countï¼Œæ»¡3å‡1ï¼Œè¾“å‡ºå‡è¿‡ä¹‹åçš„æ–°é›†åˆ
+        //Í³¼Æ³öcollection1ÖĞÏàÍ¬µÄÔªËØµÄ¸öÊı£¬ĞÎ³Écollection3£¬collection3ÊÇÒ»¸ömapÆäÖĞÔªËØkeyÊÇcollection1ÖĞµÄÔªËØvalueÊÇ¸ÃÔªËØÔÚcollection1ÖĞ³öÏÖ´ÎÊı£¬È»ºóÑ¡³öcollection3¸úcollection2ÖĞvalueÊôĞÔ¶ÔÓ¦µÄlistÖĞµÄÔªËØÏàÍ¬µÄÔªËØ,°ÑËûÃÇµÄcount£¬Âú3¼õ1£¬Êä³ö¼õ¹ıÖ®ºóµÄĞÂ¼¯ºÏ
         List<String> collection1 = Arrays.asList(
                 "a", "a", "a",
                 "e", "e", "e", "e", "e", "e", "e",

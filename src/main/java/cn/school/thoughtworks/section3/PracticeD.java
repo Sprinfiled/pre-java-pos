@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class PracticeD {
     Map<String,Integer> createUpdatedCollection(List<String> collectionA, Map<String,List<String>> object) {
-        //å®ç°ç»ƒä¹ è¦æ±‚ï¼Œå¹¶æ”¹å†™è¯¥è¡Œä»£ç ã€‚
+        //ÊµÏÖÁ·Ï°ÒªÇó£¬²¢¸ÄĞ´¸ÃĞĞ´úÂë¡£
 
         return null;
     }

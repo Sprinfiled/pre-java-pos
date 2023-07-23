@@ -20,7 +20,7 @@ public class PracticeATest {
 
     @Test
     public void count_same_elements_should_return_an_map_with_elements_and_count() {
-        //æŠŠ1é›†åˆä¸­ç›¸åŒçš„å…ƒç´ ç»Ÿè®¡å‡ºæ•°é‡
+        //°Ñ1¼¯ºÏÖĞÏàÍ¬µÄÔªËØÍ³¼Æ³öÊıÁ¿
         List<String> collection1 = Arrays.asList(
                 "a", "a", "a",
                 "e", "e", "e", "e", "e", "e", "e",

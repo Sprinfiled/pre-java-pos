@@ -1,12 +1,40 @@
 package cn.school.thoughtworks.section2;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class PracticeB {
     Map<String, Integer> countSameElements(List<String> collection1) {
-        //å®ç°ç»ƒä¹ è¦æ±‚ï¼Œå¹¶æ”¹å†™è¯¥è¡Œä»£ç ã€‚
+        //ÊµÏÖÁ·Ï°ÒªÇó£¬²¢¸ÄĞ´¸ÃĞĞ´úÂë
+        Map<String, Integer> counts = new HashMap<>();
 
-        return null;
+        // ±éÀúÊäÈëÁĞ±í£¬Í³¼ÆÃ¿¸öÔªËØµÄ³öÏÖ´ÎÊı
+        for (String element : collection1) {
+            char firstChar = element.charAt(0);
+            int count = 1;
+            int numberEndIndex = -1;
+
+            // ÅĞ¶ÏÊÇ·ñÓĞºó×º±íÊ¾³öÏÖ´ÎÊı
+            for (int i = 1; i < element.length(); i++) {
+                char ch = element.charAt(i);
+                if (ch == '[') {
+                    numberEndIndex = i;
+                    break;
+                }
+            }
+
+            if (numberEndIndex != -1) {
+                // ½âÎöºó×ºÖĞµÄÊı×Ö
+                count = Integer.parseInt(element.substring(numberEndIndex + 1, element.length() - 1));
+                firstChar = element.charAt(0);
+            }
+
+            // ¸üĞÂ¼ÆÊıMap
+            String key = String.valueOf(firstChar);
+            counts.put(key, counts.getOrDefault(key, 0) + count);
+        }
+
+        return counts;
     }
 }
