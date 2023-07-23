@@ -20,7 +20,7 @@ public class PracticeBTest {
 
     @Test
     public void count_same_elements_should_return_an_map_with_elements_and_count() {
-        //æŠŠç‰¹æ®Šå­—ç¬¦è·³å‡ºæ¥å¹¶ç¬¬ä¸€ä¸ªå­—ç¬¦å’Œé‡Œé¢çš„æ•°å­—
+        //°ÑÌØÊâ×Ö·ûÌø³öÀ´²¢µÚÒ»¸ö×Ö·ûºÍÀïÃæµÄÊı×Ö
         List<String> collection1 = Arrays.asList(
                 "a", "a", "a",
                 "e", "e", "e", "e", "e", "e", "e",
@@ -30,7 +30,7 @@ public class PracticeBTest {
                 "c", "c", "c", "c", "c", "c", "c", "c",
                 "g", "g", "g", "g", "g", "g", "g",
                 "b", "b", "b", "b", "b", "b",
-                "d-5"
+                "d-5","d","d","d","d"
         );
 
         Map<String, Integer> expectedResult = new HashMap<String, Integer>() {{

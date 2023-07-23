@@ -1,46 +1,53 @@
 package cn.school.thoughtworks.section2;
 
+import java.util.LinkedHashMap;
+import java.util.regex.*;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class PracticeC {
     Map<String, Integer> countSameElements(List<String> collection1) {
-        //å®ç°ç»ƒä¹ è¦æ±‚ï¼Œå¹¶æ”¹å†™è¯¥è¡Œä»£ç ã€‚
-        int[] counts = new int[128]; // ASCIIç èŒƒå›´æ˜¯0-127
+        if (collection1 == null) {
+            throw new IllegalArgumentException("Input collection cannot be null.");
+        }
 
-        // éå†è¾“å…¥åˆ—è¡¨ï¼Œç»Ÿè®¡æ¯ä¸ªå…ƒç´ çš„å‡ºç°æ¬¡æ•°
+        // Ê¹ÓÃHashMapÀ´±£´æÔªËØºÍ¶ÔÓ¦µÄ¼ÆÊı
+        Map<String, Integer> resultMap = new HashMap<>();
+
+        // ±éÀúÁĞ±íÖĞµÄÔªËØ
         for (String element : collection1) {
-            char firstChar = element.charAt(0);
-            int count = 1;
-            int numberEndIndex = -1;
+            if (element.contains("[")) {
+                // ´¦ÀíĞÎÈç "h[3]" µÄ×Ö·û´®
+                int countStart = element.lastIndexOf('[') + 1;
+                int countEnd = element.lastIndexOf(']');
+                int value = Integer.parseInt(element.substring(countStart, countEnd));
+                String key = element.substring(0, countStart - 1);
 
-            // åˆ¤æ–­æ˜¯å¦æœ‰åç¼€è¡¨ç¤ºå‡ºç°æ¬¡æ•°
-            for (int i = 1; i < element.length(); i++) {
-                char ch = element.charAt(i);
-                if (ch == '[') {
-                    numberEndIndex = i;
-                    break;
-                }
-            }
+                // Èç¹û½á¹û¼¯ÖĞÒÑ¾­´æÔÚµ±Ç°¼ü£¬Ôò½«ÖµÀÛ¼Ó£¬·ñÔòĞÂÔö¼üÖµ¶Ô
+                resultMap.put(key, resultMap.getOrDefault(key, 0) + value);
+            } else if (element.contains(":")) {
+                // ´¦ÀíĞÎÈç "c:8" µÄ×Ö·û´®
+                int value = Integer.parseInt(element.split(":")[1]);
+                String key = element.split(":")[0];
 
-            if (numberEndIndex != -1) {
-                // è§£æåç¼€ä¸­çš„æ•°å­—
-                count = Integer.parseInt(element.substring(numberEndIndex + 1, element.length() - 1));
-                firstChar = element.charAt(0);
-            }
+                // Èç¹û½á¹û¼¯ÖĞÒÑ¾­´æÔÚµ±Ç°¼ü£¬Ôò½«ÖµÀÛ¼Ó£¬·ñÔòĞÂÔö¼üÖµ¶Ô
+                resultMap.put(key, resultMap.getOrDefault(key, 0) + value);
+            } else if (element.contains("-")) {
+                // ´¦ÀíĞÎÈç "d-5" µÄ×Ö·û´®
+                int value = Integer.parseInt(element.split("-")[1]);
+                String key = element.split("-")[0];
 
-            // æ›´æ–°è®¡æ•°æ•°ç»„
-            counts[firstChar] += count;
-        }
-
-        // æ„å»ºç»“æœMap
-        Map<String, Integer> result = new HashMap<>();
-        for (int i = 0; i < counts.length; i++) {
-            if (counts[i] != 0) {
-                result.put(String.valueOf((char)i), counts[i]);
+                // Èç¹û½á¹û¼¯ÖĞÒÑ¾­´æÔÚµ±Ç°¼ü£¬Ôò½«ÖµÀÛ¼Ó£¬·ñÔòĞÂÔö¼üÖµ¶Ô
+                resultMap.put(key, resultMap.getOrDefault(key, 0) - value);
+            } else {
+                // Ã»ÓĞÆ¥Åäµ½ÌØÊâ¸ñÊ½µÄ×Ö·û´®£¬Ôò±£³ÖÔ­Ñù´¦Àí
+                resultMap.put(element, resultMap.getOrDefault(element, 0) + 1);
             }
         }
 
-        return result;
+        // ·µ»ØÍ³¼Æ½á¹ûµÄÓ³Éä
+        return resultMap;
     }
-}
+    }
+

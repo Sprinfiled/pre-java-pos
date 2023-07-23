@@ -20,7 +20,7 @@ public class PracticeATest {
 
     @Test
     public void create_update_collection_should_return_a_new_map_with_element_as_key_and_count_as_value() throws Exception {
-        //é€‰å‡º1é›†åˆä¸­å…ƒç´ çš„keyçš„å€¼è·Ÿ2å¯¹è±¡ä¸­valueå±æ€§ä¸­çš„å…ƒç´ ç›¸åŒçš„å…ƒç´ ,æŠŠä»–ä»¬çš„count-1ï¼Œè¾“å‡ºå‡è¿‡ä¹‹åçš„æ–°é›†åˆ
+        //Ñ¡³ö1¼¯ºÏÖĞÔªËØµÄkeyµÄÖµ¸ú2¶ÔÏóÖĞvalueÊôĞÔÖĞµÄÔªËØÏàÍ¬µÄÔªËØ,°ÑËûÃÇµÄcount-1£¬Êä³ö¼õ¹ıÖ®ºóµÄĞÂ¼¯ºÏ
         Map<String, Integer> collection1 = new HashMap<String, Integer>() {{
             put("a", 2);
             put("e", 2);
